@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
+  - source: /
     destination: /var/www/html/
+file_exists_behavior: OVERWRITE
 hooks:
-  BeforeInstall:
-    - location: scripts/install_dependencies
-      timeout: 300
+  AfterInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 900
       runas: root
-    - location: scripts/start_server
-      timeout: 300
+    - location: scripts/start_server.sh
+      timeout: 900
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server
-      timeout: 300
+    - location: scripts/stop_server.sh
+      timeout: 900
       runas: root
-
