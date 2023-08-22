@@ -14,7 +14,6 @@ sed -i "s#.*listen.mode.*#listen.mode = 0664#" /etc/php-fpm.d/www.conf
 #sed -i "s#.*listen.acl_groups.*#listen.acl_groups = nginx#" /etc/php-fpm.d/www.conf
 sed -i "s#listen.allowed_clients = 127.0.0.1#listen.allowed_clients = #" /etc/php-fpm.d/www.conf
 
-
 systemctl start php-fpm
 
 sudo amazon-linux-extras install -y nginx1
