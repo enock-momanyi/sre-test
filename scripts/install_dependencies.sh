@@ -20,6 +20,7 @@ systemctl start php-fpm
 sudo amazon-linux-extras install -y nginx1
 
 sed -i "s#root.*#root        /var/www/html;#" /etc/nginx/nginx.conf
+sed -i "s#.*listen.*:80;*# #" /etc/nginx/nginx.conf
 
 systemctl restart php-fpm
 systemctl restart nginx
